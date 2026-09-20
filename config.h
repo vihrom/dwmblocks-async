@@ -18,11 +18,8 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)                                                             \
-    X("", "xkb-switch -p | tr 'a-z' 'A-Z'", 0, 11)                            \
-    X("",                                                                     \
-      "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ if ($3 == "             \
-      "\"[MUTED]\") print \"MUTED\"; else printf \"%.0f%%\\n\", $2 * 100 }'", \
-      0, 8)                                                                   \
+    X("", "bar-layout", 0,  11)                                                \
+    X("", "bar-volume", 0,  8)                                                 \
     X("", "date '+%F %R'", 60, 10)
 
 #endif  // CONFIG_H
